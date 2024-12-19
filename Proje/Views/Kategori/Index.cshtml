@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Proje.Models.Kategoriler>
+
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+
+<h1>Kategoriler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kategori Adı</th>
+            <th>Ürünleri Görüntüle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kategori in Model)
+        {
+            <tr>
+                <td>@kategori.KategoriAdi</td>
+                <td>
+                    <a href="@Url.Action("Urunler", "Kategori", new { id = kategori.Id })">Ürünleri Gör</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

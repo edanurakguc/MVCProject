@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Proje.Models.Urun>
+
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<h1>Ürünler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <td>@urun.UrunAdi</td>
+                <td>@urun.Fiyat</td>
+            </tr>
+        }
+    </tbody>
+</table>
